@@ -1,0 +1,36 @@
+<div class="post-image-group">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label>Heading</label>
+        <onion-editor ng-model="imageGroup.heading"
+                      role="singleline"
+                      placeholder="Heading"
+                      formatting="bold,italic,strike"></onion-editor>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label>Image</label>
+
+        <div class="center-block">
+          <betty-editable
+              image="imageGroup.image"
+              ratio="1x1"
+              add-styles="fa fa-camera-retro add-image-box p-img">
+          </betty-editable>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div class="form-group">
+        <label>Body</label>
+        <onion-editor ng-model="imageGroup.body"
+                      role="multiline"
+                      placeholder="Body"></onion-editor>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+#!/bin/sh -e
+# Summary: run tests
+
+npm test

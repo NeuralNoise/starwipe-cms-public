@@ -1,0 +1,35 @@
+<edit-metadata article="article"></edit-metadata>
+
+<content-edit-main-image article="article"></content-edit-main-image>
+
+<content-edit-title article="article" class="article-header"></content-edit-title>
+
+<onion-editor id="content-description"
+              ng-model="article.description"
+              role="singleline"
+              placeholder="Description goes here"
+              formatting=""></onion-editor>
+<div>
+
+  <editor-item article="article" class="pull-right"></editor-item>
+
+  <content-edit-body article="article" link-domain="starwipe.com" search-handler="linkBrowser"></content-edit-body>
+</div>
+
+<section class="row post-cms-container">
+  <label>
+    <input type="checkbox" ng-model="article.is_numbered">
+    Is numbered
+  </label>
+  <label ng-show="article.is_numbered">
+    <input type="checkbox" ng-model="article.is_countdown">
+    Is countdown
+  </label>
+
+  <div class="clearfix">
+    <post-image-groups article="article"></post-image-groups>
+  </div>
+</section>
+
+
+<encode-status></encode-status>

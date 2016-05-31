@@ -1,0 +1,5 @@
+#!/bin/sh -e
+# Summary: setup development environment
+
+npm install && ./node_modules/.bin/bower install
+./scripts/build

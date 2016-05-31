@@ -1,0 +1,55 @@
+{
+  "image": {
+    "size": ["big", "medium", "small"],
+    "crop": ["original", "16x9", "1x1", "3x1"],
+    "defaults": {
+      "size": "big",
+      "crop": "original",
+      "image_id": 0,
+      "caption": "",
+      "url": ""
+    },
+    "template": "<div data-type='image' contenteditable='false' class='onion-image image inline size-{{size}} crop-{{crop}}' data-image-id='{{image_id}}' data-size='{{size}}' data-crop='{{crop}}' data-format='{{format}}'> <div></div><span class='caption'>{{caption}}</span></div>"
+  },
+  "onion-video": {
+    "size": ["big", "small"],
+    "crop": ["16x9", "4x3"],
+    "defaults": {
+      "size": "big",
+      "crop": "16x9"
+    },
+    "template": "<div data-type='onion-video' contenteditable='false' class='onion-video video inline size-{{size}} crop-{{crop}}' data-video-id='{{video_id}}' data-size='{{size}}' data-crop='{{crop}}'><div><iframe src='{{embed_url}}{{video_id}}'></iframe></div></div>"
+  },
+  "embed": {
+    "size": ["big", "small", "original"],
+    "crop": ["original", "16x9", "4x3"],
+    "defaults": {
+      "size": "big",
+      "crop": "original"
+    },
+    "template": "<div data-type='embed' contenteditable='false' data-crop='{{crop}}' data-size='{{size}}' class='inline embed size-{{size}} crop-{{crop}}' data-code='{{escaped_code}}' data-source='{{source}}'><div>{{code}}</div><span class='caption'>{{caption}}</span></div>"
+  },
+  "embed-instagram": {
+    "size": ["original"],
+    "crop": ["original"],
+    "defaults": {
+      "size": "original",
+      "crop": "original"
+    },
+    "template": "<div data-type=\"embed-instagram\" class=\"inline embed embed-instagram crop-1x1\"><div class=\"embed-container\" instagram-embed-html-unsanitized=\"{{html}}\"><div class=\"unrendered\"><i class=\"fa fa-instagram\"></i><span>Instagram Embed</span></div></div><span class=\"caption\">{{caption}}</span></div>"
+  },
+  "youtube": {
+    "size": ["big", "small"],
+    "crop": ["16x9", "4x3"],
+    "defaults": {
+      "size": "big",
+      "crop": "16x9",
+      "youtube_id": "foMQX9ZExsE",
+      "caption": ""
+    },
+    "template": "<div data-type='youtube' contenteditable='false' class='youtube inline size-{{size}} crop-{{crop}}' data-youtube-id='{{youtube_id}}' data-size='{{size}}' data-crop='{{crop}}'><div><img src='//img.youtube.com/vi/{{youtube_id}}/hqdefault.jpg'></div><span class='caption'>{{caption}}</span></div>"
+  },
+  "hr": {
+    "template": "<div class='hr inline' contenteditable='false'><hr></div>"
+  }
+}

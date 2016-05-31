@@ -1,0 +1,24 @@
+<div class="metadata container-fluid">
+  <div class="row">
+    <featuretype-field
+        article="article"
+        class="pull-left col-sm-4">
+    </featuretype-field>
+  </div>
+  <div class="row">
+    <content-edit-section
+        ng-model="article.section"
+        class="pull-left col-sm-4">
+    </content-edit-section>
+    <content-edit-tags
+        article="article"
+        class="pull-left col-sm-8">
+    </content-edit-tags>
+  </div>
+  <div class="row">
+    <campaign-autocomplete class="pull-left col-sm-4"
+        ng-model="article.tunic_campaign_id"
+        campaign-autocomplete-label="Sponsor Campaign">
+    </campaign-autocomplete>
+  </div>
+</div>

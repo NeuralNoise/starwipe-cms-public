@@ -1,0 +1,199 @@
+<nav
+    ng-if="article"
+    class="navbar navbar-default navbar-fixed-top"
+    role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a
+          id="logo"
+          class="navbar-brand"
+          href="/cms/app/list">
+        <img ng-src="{{ NAV_LOGO }}">
+      </a>
+      <button
+          type="button"
+          class="navbar-toggle pull-right"
+          data-toggle="collapse"
+          data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a
+          class="navbar-save btn btn-success navbar-btn visible-xs-inline pull-right"
+          ng-class="{'btn-clean': !articleIsDirty}"
+          href=""
+          ng-click="saveArticle();">
+        <i class="fa fa-floppy-o"></i>
+        <span>Save</span>
+      </a>
+    </div>
+
+    <div
+        class="collapse navbar-collapse"
+        id="navbar-collapse">
+      <ul class="nav navbar-nav edit-page-nav container-fluid">
+        <li class="dropdown">
+          <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown">
+            <span>Article Tools</span>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                  href=""
+                  role="button"
+                  class="changelog-button"
+                  ng-click="changelogModal(article);">
+                <i class="fa fa-cog"></i>
+                <span>View Changelog</span>
+              </a>
+            </li>
+            <li>
+              <a
+                  href=""
+                  role="button"
+                  class="version-browser-button"
+                  ng-click="versionBrowserModal(article);">
+                <i class="fa fa-th-list"></i>
+                <span>Browse Versions</span>
+              </a>
+            </li>
+            <li>
+              <a
+                  href=""
+                  role="button"
+                  ng-click="thumbnailModal(article);">
+                <i class="fa fa-camera"></i>
+                <span>Edit Thumbnail</span>
+              </a>
+            </li>
+            <li>
+              <a
+                  href=""
+                  role="button"
+                  sponsored-content-modal-opener
+                  article="article">
+                <i class="fa fa-briefcase"></i>
+                <span>Edit Sponsor Info</span>
+              </a>
+            </li>
+            <li>
+              <a
+                  href=""
+                  role="button"
+                  ng-click="temporaryUrlModal(article)">
+                <i class="fa fa-link"></i>
+                <span>Temporary Link</span>
+              </a>
+            </li>
+            <li
+                role="presentation"
+                class="divider">
+            </li>
+            <li>
+              <a
+                  href=""
+                  role="button"
+                  ng-click="trashContentModal(article.id);">
+                <i class="fa fa-trash-o"></i>
+                <span>Delete Article</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li
+              class="content-status"
+              ng-show="activeUsers.length > 0"
+              ng-init="showActiveUsers = false;">
+            <a
+                href=""
+                ng-mouseenter="showActiveUsers = true;"
+                ng-mouseleave="showActiveUsers = false;">
+              <i class="fa fa-eye"></i>
+              <span class="active-users-btn-text">Active Users ({{ activeUsers.length }})</span>
+            </a>
+            <div
+                class="active-users"
+                ng-show="showActiveUsers">
+              <ul>
+                <li ng-repeat="user in activeUsers">
+                  <span>{{ user.displayName }}</span>
+                  <span ng-show="user.count > 1">({{ user.count }})</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+              class="content-status"
+              ng-show="getStatus(article) == 'unpublished'">
+            <a
+                href=""
+                send-to-editor-modal-opener
+                article="article"
+                save-article="saveArticleIfDirty"
+                publish-success-cbk="publishSuccessCbk">
+              <i class="fa fa-paper-plane"></i>
+              <span>Send to Editors...</span>
+            </a>
+          </li>
+          <li
+              class="content-status"
+              ng-show="getStatus(article) == 'unpublished'">
+            <a
+                href=""
+                ng-click="saveArticle().then(pubTimeModal)">
+              <i class="fa fa-globe"></i>
+              <span>Publish...</span>
+            </a>
+          </li>
+          <li
+              class="content-status"
+              ng-show="getStatus(article) == 'published'">
+            <a
+                href=""
+                class="changeable"
+                ng-click="saveArticle().then(pubTimeModal);">
+              <i class="fa fa-calendar"></i>
+              <span>Published: {{article.published|tzDate:"M/d/yy '@' h:mm a" }}</span>
+            </a>
+          </li>
+          <li
+              class="content-status"
+              ng-show="getStatus(article) == 'scheduled'">
+            <a
+                href=""
+                class="changeable"
+                ng-click="saveArticle().then(pubTimeModal);">
+              <i class="fa fa-calendar"></i>
+              <span>Scheduled: {{article.published|tzDate:"M/d/yy '@' h:mm a" }}</span>
+            </a>
+          </li>
+          <li class="content-status">
+            <a
+                target="_blank"
+                backend-href="/r/{{article.id}}">
+              <i class="fa fa-share"></i>
+              <span>Preview</span>
+            </a>
+          </li>
+          <li class="hidden-xs">
+            <button
+                id="save-article-btn"
+                class="navbar-save btn btn-success btn-sm navbar-btn"
+                ng-class="{'btn-clean': !articleIsDirty}"
+                ng-click="saveArticle();">
+              <i class="fa fa-floppy-o"></i>
+              <span>Save</span>
+            </button>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>

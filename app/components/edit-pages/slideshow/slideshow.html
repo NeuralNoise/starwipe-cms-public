@@ -1,0 +1,27 @@
+<edit-metadata article="article"></edit-metadata>
+
+<content-edit-main-image article="article"></content-edit-main-image>
+
+<content-edit-title
+    article="article"
+    class="article-header">
+</content-edit-title>
+
+<onion-editor
+    id="content-description"
+    ng-model="article.description"
+    role="singleline"
+    placeholder="Description goes here"
+    formatting="">
+</onion-editor>
+
+<onion-editor
+    id="content-body"
+    ng-model="article.body"
+    role="multiline"
+    placeholder="<p>Write here</p>"
+    link-domain="{{ linkDomain }}"
+    link-search-handler="{{ searchHandler }}">
+</onion-editor>
+
+<slideshow-edit article="article"></slideshow-edit>

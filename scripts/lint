@@ -1,0 +1,4 @@
+#!/bin/sh -e
+# Summary: lints javascript
+
+npm run lint

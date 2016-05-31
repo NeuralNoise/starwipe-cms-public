@@ -1,0 +1,21 @@
+<edit-metadata article="article"></edit-metadata>
+
+<section class="main-image row">
+  <div class="clearfix well">
+    <video-search video="article.videohub_ref"></video-search>
+  </div>
+</section>
+
+<content-edit-title
+    article="article"
+    class="article-header">
+</content-edit-title>
+
+<onion-editor id="content-description" ng-model="article.description" role="singleline" placeholder="Description goes here" formatting=""></onion-editor>
+
+<editor-item article="article" class="pull-right" ></editor-item>
+<content-edit-body
+    article="article"
+    link-domain="starwipe.com"
+    search-handler="linkBrowser">
+</content-edit-body>

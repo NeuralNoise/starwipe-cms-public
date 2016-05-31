@@ -1,0 +1,17 @@
+# bower junk
+bower_components
+
+# node junk
+node_modules
+npm-debug.log
+
+# linting
+.eslintrc
+
+# build and serve directories
+steps
+dist
+
+# ide junk
+.idea/
+*.swp

@@ -1,0 +1,45 @@
+<div class="post-image-groups">
+  <div id="post-image-groups"
+       class="post-image-groups">
+    <div class="panel panel-default"
+         ng-repeat="image_group in article.image_groups">
+      <div class="panel-heading">
+        <div class="pull-left panel-title h4">
+          <span ng-hide="image_group.heading"><strong>...</strong></span>
+          <span ng-bind-html="image_group.heading"></span><span ng-show="image_group.heading"></span>
+        </div>
+        <div class="pull-right btn-toolbar">
+          <div class="btn-group">
+            <button class="btn btn-link btn-xs"
+                    ng-click="onMoveListObject(article.image_groups, $index, $index - 1)"
+                    ng-disabled="$index == 0">
+              <span class="fa fa-chevron-up"></span>
+            </button>
+            <button class="btn btn-link btn-xs"
+                    ng-click="onMoveListObject(article.image_groups, $index, $index + 1)"
+                    ng-disabled="$last">
+              <span class="fa fa-chevron-down"></span>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-link btn-xs"
+                    ng-click="onDeleteImageGroup(image_group)">
+              <span class="fa fa-times"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="post-image-group-{{ $index }}"
+           class="panel-body">
+        <post-image-group article="article"
+                          image-group="image_group"></post-image-group>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center post-cms-container">
+    <button class="btn btn-success"
+            ng-click="onAddImageGroup()">
+      <span class="glyphicon glyphicon-plus"></span> Add Image Group
+    </button>
+  </div>
+</div>
