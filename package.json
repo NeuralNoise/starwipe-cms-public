@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "watch": "webpack -w",
     "lint": "eslint ./app && echo '\\033[0;32m ✔︎ Linty Fresh\\033[0m'",
     "test": "echo 'no tests :('"
   }

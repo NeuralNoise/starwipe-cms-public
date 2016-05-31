@@ -14,10 +14,23 @@ You can lint the code in this repository with eslint using the `lint` script in 
 ./scripts/lint
 ```
 
-Alternatively, you may use the `npm` script to run the lint script:
+Alternatively, you may use `npm` to run the lint script:
 
 ```bash
 npm run lint
+```
+
+### Watch (dev workflow)
+During development, it's handy to have webpack build the project each time you make code changes. To have the project compiled as you make changes, use the `watch` script in `scripts/watch`:
+
+```bash
+./scripts/watch
+```
+
+Alternatively, you may use `npm` to run the watch script:
+
+```bash
+npm run watch
 ```
 
 ### Build
@@ -27,7 +40,7 @@ To build the project locally, use the `build` script in `scripts/build`:
 ./scripts/build
 ```
 
-Alternatively, you may use the `npm` script to run the build script:
+Alternatively, you may use `npm` to run the build script:
 
 ```bash
 npm run build
