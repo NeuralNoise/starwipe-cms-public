@@ -5,11 +5,7 @@ bower_components
 node_modules
 npm-debug.log
 
-# linting
-.eslintrc
-
 # build and serve directories
-steps
 dist
 
 # ide junk
