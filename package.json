@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "lint": "npm run lint-dev-files && eslint ./app && echo '\\033[0;32m ✔︎ Linty Fresh\\033[0m'",
+    "lint": "eslint ./app && echo '\\033[0;32m ✔︎ Linty Fresh\\033[0m'",
     "test": "echo 'no tests :('"
   }
 }
