@@ -20,6 +20,19 @@ Alternatively, you may use the `npm` script to run the lint script:
 npm run lint
 ```
 
+### Build
+To build the project locally, use the `build` script in `scripts/build`:
+
+```bash
+./scripts/build
+```
+
+Alternatively, you may use the `npm` script to run the build script:
+
+```bash
+npm run build
+```
+
 ### Releasing
 To cut a release, make sure all your local changes are committed and your working directory is clean. Simply run the `scripts/tag-and-release` script, passing it the type of release you wish to build _(temp, patch, minor, major)_.
 
