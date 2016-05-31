@@ -7,36 +7,24 @@ To get starwipe-cms running locally:
 1. Follow the steps to start up [starwipe](https://github.com/theonion/starwipe)
 so the StarWipe API is available to the CMS.
 
-1. Add a mapping for ```cms.starwipe.local``` to your ```docker-dev``` ip in
-your ```/etc/hosts```.
-
-1. Inside starwipe-cms, run the following commands (the serve script will build the server):
-  ```bash
-  $ ./scripts/serve
-  ```
-
-1. Access the locally running CMS at [cms.starwipe.local:10001](http://cms.starwipe.local:9000)
-
 ### Linting
-To lint, do the setup steps above, but instead of running ```./scripts/serve```,
-run ```./scripts/lint```.
+You can lint the code in this repository with eslint using the `lint` script in `scripts/lint`:
 
-If you would like to integrate eslint with your editor, add an ```.eslintrc```
-file at the root of the project folder with the following contents:
-```json
-{
-  "extends": "./resources/js/eslint.json"
-}
+```bash
+./scripts/lint
 ```
-You can switch the path from ```eslint.json``` to ```eslint-dev.json``` for more
-lenient linting for things like spec, server, and build files.
 
-### APP_ENV Variable
-The ```docker-compose``` file that ships with this repo has its ```APP_ENV```
-set to ```local```. This will enable livereload and other development-friendly
-settings when serving the CMS.
+Alternatively, you may use the `npm` script to run the lint script:
 
-To enable a more production-like environment, set the ```APP_ENV``` variable
-in ```docker-compose``` to ```production``` and comment out the ```command```
-setting. Livereloading will not be enabled, and all sources will be minified
-before serving.
+```bash
+npm run lint
+```
+
+### Releasing
+To cut a release, make sure all your local changes are committed and your working directory is clean. Simply run the `scripts/tag-and-release` script, passing it the type of release you wish to build _(temp, patch, minor, major)_.
+
+```bash
+./scripts/tag-and-release
+```
+
+This will run the linter, the tests and build the project into a distributable build product in the `dist` folder.
