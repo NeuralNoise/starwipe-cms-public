@@ -23,8 +23,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "lint": "npm run lint-dev-files && eslint --config eslint.json --ignore-pattern ./app/**/*.spec.js ./app && echo '\\033[0;32m ✔︎ Linty Fresh\\033[0m'",
-    "lint-dev-files": "eslint --config eslint-dev.json ./app/**/*.spec.js",
+    "lint": "npm run lint-dev-files && eslint ./app && echo '\\033[0;32m ✔︎ Linty Fresh\\033[0m'",
     "test": "echo 'no tests :('"
   }
 }
