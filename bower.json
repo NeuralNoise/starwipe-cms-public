@@ -7,7 +7,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "bulbs-cms-2": "theonion/bulbs-cms-2#1.0.0",
+    "bulbs-cms-2": "theonion/bulbs-cms-2#1.0.1",
     "bulbs-component-quiz": "theonion/bulbs-component-quiz#0.0.4",
     "bulbs-elements": "theonion/bulbs-elements#0.2.5",
     "bulbs-slideshow": "theonion/bulbs-slideshow#0.0.7"
